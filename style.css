@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Bahiana&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400&display=swap');
+
+body{
+    font-family:"Bahiana", sans-serif;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    margin:0;
+    /* font-family: ; */
+
+    
+}
+body,
+.snake{
+    background-color: #009b4d;
+}
+img{
+    width:200px;
+    height:auto;
+}
+#game-board{
+    border-radius:100px;
+    display:grid;
+    grid-template-columns: repeat(20,20px);
+    grid-template-rows: repeat(20,20px);
+    margin:5px;
+}
+.game-border-1{
+   border:#ffcc00 solid 10px;
+   border-radius:30px;
+   box-shadow:inset 0 0 0 10px #ffcc00;
+}
+.game-border-2{
+   border:#ffcc00 solid 8px;
+   border-radius:26px;
+   box-shadow:inset 0 0 0 10px #ffcc00;
+}
+.game-border-3{
+   border:#fedc56 solid 30px;
+   border-radius:20px;
+   box-shadow:inset 0 0 0 5px #ffcc00;
+}
+
+#instruction-text{
+    position:absolute;
+    top:60%;
+    color:#333;
+    width:300px;
+    text-align:center;
+    text-transform:capitalize;
+    padding:30px;
+    margin:0;
+}
+
+.scores{
+    display:flex;
+    justify-content:space-between;
+}
+#score{
+    color:#abb78a;
+}
+#score,#highScore{
+    font-size:40px;
+    font-weight:bolder;
+    margin: 10px 0
+}
+
+#highScore{
+    color:#d8ddca;
+    display:none;
+}
+.game-border-3, #logo{
+    background-color:#ffcc00;
+}
+.snake{
+    border:#5a5a5a 1px dotted;
+}
+.food{
+    background-color:red;
+    border:#999 5px solid;
+}
+
+#logo{
+    position:absolute;
+}
+#modal{
+    display:none;
+    justify-content:center;
+    align-items:center;
+    position:absolute;
+    min-height: 100vh;
+    min-width:100vw;
+    background:#0e110eaf;
+}
+#modal .gameOver{
+    color:red;
+    cursor: none;
+    font-size: 100px;
+}
