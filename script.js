@@ -151,8 +151,47 @@ function handleKeyPress(event){
 }
 document.addEventListener("keydown",handleKeyPress);
 
+// Adding touch event listeners
+document.addEventListener ("touchstart",handleTouchStart);
+document.addEventListener("touchmove", handleTouchMove);
+
+let touchStartX = 0;
+let touchStartY = 0;
+
+function handleTouchStart(event){
+    if(!gameStarted){
+    touchStartX = event.touches[0].clientX;
+    touchStartY = event.touches[0].clientY;
+    startGame();  
+    gameStarted = true; 
+    handleTouchMove();
+}
+}
+ 
+function handleTouchMove(event){
+    const touchEndX = event.touches[0].clientX;
+    const touchEndY = event.touches[0].clientY;
+
+    const deltaX = touchEndX - touchStartX;
+    const deltaY = touchEndY - touchStartY;
+
+    if(Math.abs(deltaX) > Math.abs(deltaY)){
+        if(deltaX > 0 ){
+            direction ="right";
+        }else{
+            direction = "left";
+        }
+    }else {
+        if(deltaY > 0){
+            direction = "down";
+        }else{
+            direction = "up";
+        }
+    }
+}
+
 function increaseSpeed(){
-    console.log(gameSpeedDelay);
+
     if (gameSpeedDelay > 150){
        gameSpeedDelay    -= 5;
     }else if (gameSpeedDelay > 100){
