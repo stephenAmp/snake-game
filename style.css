@@ -107,7 +107,7 @@ img{
 /* MEDIA QUERIES */
 @media only screen and (max-width: 600px) {
    body{
-    overflow-y: hidden;
+    overflow-y: auto;
     overflow-x: hidden;
    }
     .game-board{
@@ -116,20 +116,20 @@ img{
     grid-template-rows: repeat(15,20px);
    }
    .game-border-3{
-    order:#fedc56 solid 30px;
-   border-radius:20px;
+    border:#fedc56 solid 20px;
+   border-radius:15px;
    box-shadow:inset 0 0 0 5px #ffcc00;
    }
    .game-border-1{
     
-    border:#ffcc00 solid 10px;
-    border-radius:30px;
+    border:#ffcc00 solid 8px;
+    border-radius:20px;
     box-shadow:inset 0 0 0 10px #ffcc00;
  }
  .game-border-2{
      
-    border:#ffcc00 solid 8px;
-    border-radius:26px;
+    border:#ffcc00 solid 6px;
+    border-radius:16px;
     box-shadow:inset 0 0 0 10px #ffcc00;
  }
 }
