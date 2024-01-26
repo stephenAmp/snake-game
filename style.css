@@ -106,7 +106,11 @@ img{
 
 /* MEDIA QUERIES */
 @media only screen and (max-width: 600px) {
-   .game-board{
+   body{
+    overflow-y: hidden;
+    overflow-x: hidden;
+   }
+    .game-board{
     display:grid;
     grid-template-columns: repeat(15,20px);
     grid-template-rows: repeat(15,20px);

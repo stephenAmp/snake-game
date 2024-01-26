@@ -5,6 +5,8 @@ const logo = document.getElementById("logo");
 const score = document.getElementById("score");
 const highScoreText = document.getElementById("highScore");
 const modal = document.getElementById("modal");
+const gameOver = document.getElementById("gameOver");
+
 // Define game variables
 const gridSize = 20;
 let snake =  [{x:10,y:10}];
@@ -65,6 +67,11 @@ function generateFood(){
     const y = Math.floor(Math.random() * gridSize) + 1 ;
     return{x,y};
 }
+// Eat sound
+function eatSound(){
+    const eatSound = document.getElementById("eatSound");
+    eatSound.play()
+}
 // Moving the Snake
 function move(){
     const head = {...snake[0]};
@@ -89,6 +96,7 @@ function move(){
 
     if (head.x === food.x && head.y === food.y){
         food = generateFood();
+        eatSound();
         increaseSpeed();
         clearInterval(gameInterval);  //clear past interval
         gameInterval = setInterval( ()=>{
@@ -203,6 +211,12 @@ function increaseSpeed(){
     }
 }
 // if snake collides with itself or wall GAME OVER
+
+// Sound for gameOver
+function gameOverSound(){
+    const gameOver = document.getElementById("gameOver");
+    gameOver.play();
+}
 function checkCollision(){
     const head = snake[0];
     if (head.x < 1 || head.x > gridSize || head.y <1 || head.y > gridSize){
@@ -237,6 +251,7 @@ function stopGame(){
     instructionText.style.display ="block";
     logo.style.display ="block";
     modal.style.display = "flex";
+    gameOverSound();
 }
 
 function updateHighScore(){
