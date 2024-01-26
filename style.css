@@ -104,7 +104,7 @@ img{
 }
 
 /* MEDIA QUERIES */
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 600px) {
    .game-board{
     display:grid;
     grid-template-columns: repeat(15,20px);
